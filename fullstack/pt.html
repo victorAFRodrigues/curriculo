@@ -1,198 +1,170 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Victor Augusto Ferreira Rodrigues - Currículo</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 11pt;
-            color: #000;
-            background: #fff;
-            margin: 0;
-            padding: 0;
-        }
-        .page {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 50px;
-        }
-        h1 {
-            font-size: 20pt;
-            margin: 0 0 4px 0;
-        }
-        .subtitle {
-            font-size: 11pt;
-            margin: 0 0 8px 0;
-        }
-        .contact {
-            font-size: 10pt;
-            margin-bottom: 16px;
-        }
-        h2 {
-            font-size: 12pt;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0 0 8px 0;
-            border-bottom: 1px solid #000;
-            padding-bottom: 2px;
-        }
-        .section {
-            margin-bottom: 18px;
-        }
-        .job-title {
-            font-weight: bold;
-            font-size: 11pt;
-        }
-        .job-company {
-            font-size: 11pt;
-        }
-        .job-period {
-            font-size: 10pt;
-            color: #333;
-        }
-        ul {
-            margin: 6px 0 0 18px;
-            padding: 0;
-        }
-        li {
-            margin-bottom: 4px;
-            font-size: 11pt;
-        }
-        p {
-            font-size: 11pt;
-            line-height: 1.6;
-            margin: 6px 0;
-        }
-        .edu-item {
-            margin-bottom: 8px;
-            font-size: 11pt;
-            line-height: 1.6;
-        }
-        .cert-list {
-            margin: 0;
-            padding-left: 18px;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Victor Augusto Ferreira Rodrigues</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 40px 60px;
+  }
+
+  h1 {
+    font-size: 20pt;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    font-size: 11pt;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  .contact {
+    font-size: 10pt;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .contact span { margin-right: 16px; }
+
+  hr {
+    border: none;
+    border-top: 1.5px solid #000;
+    margin: 0 0 8px 0;
+  }
+
+  h2 {
+    font-size: 11pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    margin-top: 18px;
+  }
+
+  p { margin-bottom: 8px; font-size: 11pt; }
+
+  .job-title { font-weight: bold; font-size: 11pt; margin-top: 14px; margin-bottom: 1px; }
+  .job-meta { font-size: 10.5pt; color: #333; margin-bottom: 5px; }
+
+  ul { padding-left: 18px; margin-bottom: 4px; }
+  ul li { font-size: 11pt; margin-bottom: 3px; }
+
+  .skills-row { margin-bottom: 4px; font-size: 11pt; }
+  .skills-row strong { display: inline-block; min-width: 160px; }
+
+  @media print {
+    body { margin: 0; padding: 20px 40px 40px; }
+  }
+</style>
 </head>
 <body>
-<div class="page">
 
-    <h1>Victor Augusto Ferreira Rodrigues</h1>
-    <div class="subtitle">Desenvolvedor Full Stack | Desenvolvedor de Sistemas Pleno</div>
-    <div class="contact">
-        Santo André, SP &nbsp;|&nbsp; (11) 91917-8960 &nbsp;|&nbsp; victor_duu@hotmail.com &nbsp;|&nbsp; linkedin.com/in/victorafrodrigues
-    </div>
-
-    <div class="section">
-        <h2>Resumo Profissional</h2>
-        <p>
-            Desenvolvedor Full Stack com mais de <span id="xp"></span> anos de experiência em desenvolvimento de aplicações corporativas, sistemas web, integrações e e-commerce. Atualmente atuando como Desenvolvedor de Sistemas Pleno, responsável por integrações entre sistemas ERP (Protheus, Dealer.net, SolutionERP) e a plataforma GOEVO, entregando soluções que geraram uma economia de aproximadamente R$40.000 em custos de integração com sistema legado.
-        </p>
-        <p>
-            Experiência sólida em desenvolvimento back-end (C#, .NET, Go (Golang), Python), front-end (HTML, CSS, JavaScript, jQuery, TypeScript, Angular, Astro), infraestrutura (Docker, Linux, AWS, GCP, Azure, Redis, RabbitMQ) e bancos de dados (MySQL, SQL Server, PostgreSQL, MongoDB). Aplico consistentemente boas práticas de engenharia de software, padrões de segurança da informação, automação com IA e engenharia de prompt. Experiência em design e prototipação de UI/UX com Figma. Conhecimento avançado em administração de servidores Linux e gerenciamento de homelab com Proxmox.
-        </p>
-    </div>
-
-    <div class="section">
-        <h2>Experiência Profissional</h2>
-
-        <div style="margin-bottom:16px;">
-            <div class="job-title">Desenvolvedor de Sistemas Pleno</div>
-            <div class="job-company">TPrime Tecnologia</div>
-            <div class="job-period">Agosto de 2025 – Presente</div>
-            <ul>
-                <li>Desenvolveu integrações entre o sistema GOEVO e os principais ERPs do mercado (Protheus, Dealer.net, SolutionERP), gerando economia de aproximadamente R$40.000 em custos de integração com sistema legado.</li>
-                <li>Programação diária em C# no back-end e HTML, CSS e jQuery no front-end.</li>
-                <li>Desenvolveu ferramentas corporativas de automação utilizando Python e Go (Golang), melhorando a eficiência dos processos internos e reduzindo operações manuais.</li>
-                <li>Implementou automações com IA, engenharia de prompt e boas práticas de engenharia de software aplicadas a fluxos de distribuição e deploy.</li>
-                <li>Aplicou padrões de segurança da informação e arquitetura de software (SOLID, Clean Architecture).</li>
-                <li>Desenvolveu e manteve APIs REST, testes unitários e documentação técnica.</li>
-                <li>Trabalhou com pipelines de CI/CD, conteinerização com Docker e metodologias ágeis (Scrum e Kanban).</li>
-                <li>Criou designs de UI e protótipos no Figma seguindo boas práticas de UI/UX.</li>
-            </ul>
-        </div>
-
-        <div style="margin-bottom:16px;">
-            <div class="job-title">Desenvolvedor Web</div>
-            <div class="job-company">Hungry Digital</div>
-            <div class="job-period">Novembro de 2023 – Abril de 2025 (1 ano e 6 meses)</div>
-            <ul>
-                <li>Desenvolveu sites institucionais, landing pages e ferramentas internas utilizando Laravel, PHP, JavaScript, jQuery, HTML e CSS.</li>
-                <li>Realizou customizações e integrações em plataformas de e-commerce: VTEX, Tray, Nuvemshop, WordPress e Shopify.</li>
-                <li>Executou otimizações de performance, SEO técnico e melhorias de Core Web Vitals nos projetos dos clientes.</li>
-                <li>Desenvolveu ferramentas internas para apoiar o fluxo de trabalho e a produtividade da equipe de desenvolvimento.</li>
-                <li>Padronizou ambientes de desenvolvimento com Docker e gerenciou pipelines de deploy.</li>
-            </ul>
-        </div>
-
-        <div style="margin-bottom:16px;">
-            <div class="job-title">Estagiário em Desenvolvimento e Suporte em TI</div>
-            <div class="job-company">Hungry Digital</div>
-            <div class="job-period">Abril de 2021 – Outubro de 2023 (2 anos e 7 meses)</div>
-            <ul>
-                <li>Prestou suporte técnico geral, incluindo resolução de problemas de DNS e configuração de redes.</li>
-                <li>Realizou manutenção de aplicações, correção de bugs e ajustes operacionais em sistemas existentes.</li>
-                <li>Gerenciou postagem de conteúdo e otimização de SEO em blogs de clientes.</li>
-                <li>Desenvolveu melhorias utilizando HTML, CSS e JavaScript.</li>
-                <li>Promovido a Desenvolvedor Web pelo desempenho e evolução técnica.</li>
-            </ul>
-        </div>
-
-    </div>
-
-    <div class="section">
-        <h2>Habilidades Técnicas</h2>
-        <p><strong>Linguagens:</strong> C#, Go (Golang), Python, TypeScript, JavaScript, PHP, Sass/SCSS, HTML5, CSS3</p>
-        <p><strong>Frameworks e Bibliotecas:</strong> .NET / ASP.NET, Angular, Astro, jQuery, React</p>
-        <p><strong>Bancos de Dados:</strong> SQL Server, MySQL, PostgreSQL, MongoDB, Redis</p>
-        <p><strong>Infraestrutura e DevOps:</strong> Docker, Linux (servidores e homelab com Proxmox), AWS, GCP, Azure, Cloudflare, RabbitMQ, Git, GitHub, GitLab, Pipelines de CI/CD</p>
-        <p><strong>Plataformas e CMS:</strong> WordPress, Shopify, VTEX, Tray, Nuvemshop</p>
-        <p><strong>Design e Outros:</strong> Figma (UI/UX), Engenharia de Prompt, Automação com IA, Metodologias Ágeis (Scrum e Kanban), SEO Técnico</p>
-    </div>
-
-    <div class="section">
-        <h2>Formação Acadêmica</h2>
-        <div class="edu-item">
-            <strong>Tecnólogo em Análise e Desenvolvimento de Sistemas (ADS)</strong><br>
-            Universidade Cruzeiro do Sul &nbsp;|&nbsp; Janeiro de 2025 – Previsão de conclusão: Dezembro de 2028
-        </div>
-        <div class="edu-item">
-            <strong>Bacharelado em Sistemas da Informação (incompleto)</strong><br>
-            UNINOVE – Universidade Nove de Julho &nbsp;|&nbsp; Janeiro de 2022 – 2024
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>Certificações</h2>
-        <ul class="cert-list">
-            <li>Docker Completo – Udemy</li>
-            <li>Bootcamp Santander / DIO – Angular + Java: SPA com Angular, Aperfeiçoando Lógica e Pensamento Computacional, Construindo uma Pokédex com JavaScript, Criando Blog com Angular, Desafios de Projetos – Portfólio Vencedor, Dominando HTTP e PokeAPI, Fundamentos de POO com Java, Introdução ao Desenvolvimento Web com JavaScript, Introdução ao Ecossistema Angular, Introdução ao HTML5 e CSS3, Lifecycle Hooks no Angular, Módulos no Angular, Organizando seus Estudos com Roadmaps DIO e Notion, Sintaxe Básica de JavaScript, Trabalhando com Componentes no Angular, Trabalhando com Rotas no Angular, Trabalhando com Web Components no Front-end, TypeScript para Angular</li>
-            <li>OneBitCode – CSS3, HTML5, JavaScript (Níveis I, II, III e IV), TypeScript, Git e GitHub, CSS Moderno, Bootstrap e Sass, Fundamentos do React, React + TypeScript (Projeto React Kanban), Next.js, Introdução ao Node.js, Aplicações Web com Node.js, Banco de Dados SQL, SQL no Node.js e Prisma ORM, EAD inspirado no Netflix, Agente de IA com Node.js + OpenAI</li>
-            <li>Imersão Dev com Google Gemini – Alura (setembro de 2024)</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Idiomas</h2>
-        <p>Português: Nativo</p>
-        <p>Inglês: Intermediário / Avançado</p>
-    </div>
-
-    <div class="section">
-        <h2>Informações Adicionais</h2>
-        <ul>
-            <li>Administração de homelab com Proxmox, incluindo configuração de servidores Linux e redes.</li>
-            <li>Disponibilidade: remoto, presencial ou híbrido.</li>
-        </ul>
-    </div>
-
+<h1>Victor Augusto Ferreira Rodrigues</h1>
+<div class="subtitle">Desenvolvedor Full Stack | Desenvolvedor de Sistemas Pleno</div>
+<div class="contact">
+  <span>São Paulo, SP</span>
+  <span>(11) 91917-8960</span>
+  <span>victor_duu@hotmail.com</span>
+  <span>linkedin.com/in/victorafrodrigues</span>
+  <span>Disponível: remoto, presencial ou híbrido</span>
 </div>
+
+<h2>Resumo Profissional</h2>
+<hr>
+<p>
+  Desenvolvedor Full Stack com mais de 6 anos de experiência em desenvolvimento de aplicações corporativas, sistemas web, integrações e e-commerce. Especialista em back-end com C#, ASP.NET Core e Entity Framework Core, aplicando arquiteturas baseadas em Clean Architecture, Domain-Driven Design (DDD) e CQRS, com uso consistente dos princípios SOLID e padrões de segurança como OAuth2, JWT e OWASP. Experiência em front-end com Angular, TypeScript e React. Infraestrutura com Docker, AWS, GCP, Azure e pipelines CI/CD. Histórico comprovado de entrega de projetos do planejamento arquitetural à produção, com foco em escalabilidade, segurança e redução de custos operacionais.
+</p>
+
+<h2>Principais Marcos</h2>
+<hr>
+<ul>
+  <li>Economia de R$ 40.000 em custos de integração ao desenvolver integrações ERP (Protheus, Dealer.net, SolutionERP) com a plataforma GOEVO, eliminando dependência de sistema legado.</li>
+  <li>Responsável pelo ciclo completo de implementação de projetos: levantamento de requisitos, planejamento arquitetural, desenvolvimento, testes e deploy em produção.</li>
+  <li>Planejamento e implementação de arquiteturas escaláveis com Clean Architecture, DDD, CQRS e SOLID, aplicando os melhores padrões de mercado para desenvolvimento e segurança desde a concepção.</li>
+  <li>Automação de processos corporativos com Python, Go e OpenAI API, reduzindo operações manuais e melhorando fluxos de distribuição e deploy.</li>
+  <li>Customizações e integrações em 5 plataformas de e-commerce (VTEX, Tray, Nuvemshop, Shopify e WordPress) com melhorias mensuráveis em Core Web Vitals e SEO técnico.</li>
+  <li>Padronização de ambientes de desenvolvimento com Docker e CI/CD para toda a equipe, reduzindo inconsistências entre ambiente local e produção.</li>
+  <li>Promovido de estagiário a Desenvolvedor Web em menos de 3 anos na mesma empresa, por desempenho e evolução técnica comprovados.</li>
+  <li>Administração de homelab próprio com Proxmox, servidores Linux e redes — aprofundamento técnico em infraestrutura além do ambiente corporativo.</li>
+</ul>
+
+<h2>Experiência Profissional</h2>
+<hr>
+
+<div class="job-title">Desenvolvedor de Sistemas Pleno</div>
+<div class="job-meta">TPrime Tecnologia &nbsp;|&nbsp; Agosto de 2025 – Presente &nbsp;|&nbsp; Remoto</div>
+<ul>
+  <li>Desenvolveu integrações ERP-to-ERP (Protheus, Dealer.net, SolutionERP com GOEVO) em C# e ASP.NET Core, gerando economia de aproximadamente R$ 40.000 em custos com sistema legado.</li>
+  <li>Arquitetou e implementou APIs REST com Clean Architecture, Repository Pattern e Dependency Injection, com cobertura de testes unitários via xUnit.</li>
+  <li>Aplicou padrões de segurança OAuth2, JWT e OWASP nas APIs expostas, com rate limiting e validação em camadas.</li>
+  <li>Utilizou Entity Framework Core, LINQ e Dapper para acesso e mapeamento de dados em SQL Server e PostgreSQL.</li>
+  <li>Implementou padrões de projeto como CQRS com MediatR, Factory, Strategy e Observer em soluções baseadas em Domain-Driven Design (DDD).</li>
+  <li>Criou ferramentas de automação corporativa com Python e Go (Golang) e automações com IA e engenharia de prompt aplicadas a fluxos de distribuição e deploy.</li>
+  <li>Trabalhou com Docker, pipelines CI/CD via GitHub Actions e metodologias ágeis Scrum e Kanban.</li>
+  <li>Front-end com HTML5, CSS3, jQuery; prototipação de interfaces no Figma com boas práticas de UI/UX.</li>
+</ul>
+
+<div class="job-title">Desenvolvedor Web</div>
+<div class="job-meta">Hungry Digital &nbsp;|&nbsp; Novembro de 2023 – Abril de 2025 (1 ano e 6 meses)</div>
+<ul>
+  <li>Desenvolveu sites institucionais, landing pages e ferramentas internas com Laravel, PHP, JavaScript, HTML5 e CSS3.</li>
+  <li>Implementou customizações e integrações em VTEX, Tray, Nuvemshop, WordPress e Shopify, incluindo fluxos de checkout e APIs de pagamento.</li>
+  <li>Conduziu otimizações de performance, SEO técnico e melhorias de Core Web Vitals com impacto mensurável no ranking orgânico dos clientes.</li>
+  <li>Padronizou ambientes de desenvolvimento com Docker e gerenciou pipelines de deploy para toda a equipe.</li>
+</ul>
+
+<div class="job-title">Estagiário — Desenvolvimento e Suporte em TI</div>
+<div class="job-meta">Hungry Digital &nbsp;|&nbsp; Abril de 2021 – Outubro de 2023 (2 anos e 7 meses)</div>
+<ul>
+  <li>Suporte técnico, resolução de problemas de DNS e configuração de redes.</li>
+  <li>Manutenção de aplicações, correção de bugs e melhorias com HTML, CSS e JavaScript.</li>
+  <li>Promovido a Desenvolvedor Web pelo desempenho e evolução técnica comprovados.</li>
+</ul>
+
+<h2>Habilidades Técnicas</h2>
+<hr>
+<div class="skills-row"><strong>Linguagens:</strong> C#, Go (Golang), Python, TypeScript, JavaScript, PHP, Sass/SCSS, HTML5, CSS3</div>
+<div class="skills-row"><strong>.NET / Back-end:</strong> ASP.NET Core, Entity Framework Core, LINQ, Dapper, MediatR, SignalR, xUnit, NUnit</div>
+<div class="skills-row"><strong>Padrões de Projeto:</strong> Clean Architecture, SOLID, DDD, CQRS, Repository Pattern, Unit of Work, Factory, Strategy, Observer, Dependency Injection</div>
+<div class="skills-row"><strong>Segurança:</strong> OAuth2, JWT, OWASP, HTTPS/TLS, Rate Limiting, API Gateway</div>
+<div class="skills-row"><strong>Front-end:</strong> Angular, React, Astro, jQuery, Laravel</div>
+<div class="skills-row"><strong>Bancos de Dados:</strong> SQL Server, MySQL, PostgreSQL, MongoDB, Redis</div>
+<div class="skills-row"><strong>Infra / Cloud / DevOps:</strong> Docker, AWS, GCP, Azure, CI/CD, GitHub Actions, GitLab CI, RabbitMQ, Linux, Proxmox, Nginx, Cloudflare</div>
+<div class="skills-row"><strong>Plataformas / CMS:</strong> VTEX, Tray, Nuvemshop, WordPress, Shopify</div>
+<div class="skills-row"><strong>Outros:</strong> Figma (UI/UX), Engenharia de Prompt, OpenAI API, SEO Técnico, Scrum, Kanban</div>
+
+<h2>Formação Acadêmica</h2>
+<hr>
+<div class="job-title">Tecnólogo em Análise e Desenvolvimento de Sistemas</div>
+<div class="job-meta">Universidade Cruzeiro do Sul &nbsp;|&nbsp; Janeiro de 2025 – Dezembro de 2028 (em curso)</div>
+
+<div class="job-title" style="margin-top:10px;">Bacharelado em Sistemas da Informação (incompleto)</div>
+<div class="job-meta">UNINOVE – Universidade Nove de Julho &nbsp;|&nbsp; Janeiro de 2022 – 2024</div>
+
+<h2>Certificações</h2>
+<hr>
+<ul>
+  <li>Docker Completo — Udemy</li>
+  <li>Angular + Java Bootcamp — Santander / DIO (SPA com Angular, TypeScript, Web Components, Rotas, Módulos)</li>
+  <li>HTML5, CSS3, JavaScript (I–IV), TypeScript, Git, React, Next.js, Node.js, SQL — OneBitCode</li>
+  <li>Agente de IA com Node.js e OpenAI — OneBitCode</li>
+  <li>Imersão Dev com Google Gemini — Alura (setembro de 2024)</li>
+</ul>
+
+<h2>Idiomas</h2>
+<hr>
+<ul>
+  <li>Português — Nativo</li>
+  <li>Inglês — Intermediário / Avançado</li>
+</ul>
+
 </body>
-<script>
-    (()=>{
-        const year = new Date().getFullYear();
-        document.querySelector("#xp").innerHTML = `${year - 2020}`;
-    })();
-</script>
 </html>
