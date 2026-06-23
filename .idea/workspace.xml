@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e34d405-0b6a-4c67-822e-c4f1774d4c80" name="Changes" comment="" />
+    <list default="true" id="4e34d405-0b6a-4c67-822e-c4f1774d4c80" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fullstack/en.html" beforeDir="false" afterPath="$PROJECT_DIR$/fullstack/en.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fullstack/pt.html" beforeDir="false" afterPath="$PROJECT_DIR$/fullstack/pt.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/scripts/cv-export.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/scripts/cv-export.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/scripts/cv-render.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/scripts/cv-render.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +94,7 @@
       <workItem from="1779750601573" duration="3573000" />
       <workItem from="1780191093041" duration="1000" />
       <workItem from="1782188989603" duration="1955000" />
-      <workItem from="1782191283539" duration="4099000" />
+      <workItem from="1782191283539" duration="7484000" />
     </task>
     <servers />
   </component>

@@ -62,7 +62,7 @@ async function exportDocx() {
         // Header
         children.push(ph1(CV.nome));
         children.push(pSub(CV.titulo.join(" | ")));
-        children.push(pContact([CV.cidade, CV.telefone, CV.email, CV.linkedin, `${CV.strings.availableLabel} ${CV.disponibilidade}`].join("   |   ")));
+        children.push(pContact([CV.cidade, CV.telefone, CV.email, CV.linkedin, CV.github, `${CV.strings.availableLabel} ${CV.disponibilidade}`].join("   |   ")));
 
         // Resumo
         children.push(pSection(CV.titulos.professionalSummary));
@@ -85,6 +85,17 @@ async function exportDocx() {
             children.push(pJobMeta(metaParts.join("   |   ")));
             exp.bullets.forEach(b => children.push(pBullet(b)));
         });
+
+        // Projects
+        const projetosData = CV.projetos || CV.projects;
+        if (projetosData) {
+          children.push(pSection(CV.titulos.projects));
+          projetosData.forEach(proj => {
+            const nome = proj.nome || proj.name;
+            children.push(pJobTitle(nome));
+            proj.bullets.forEach(b => children.push(pBullet(b)));
+          });
+        }
 
         // Habilidades
         children.push(pSection(CV.titulos.technicalSkills));

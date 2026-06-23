@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     CV.telefone,
     CV.email,
     CV.linkedin,
+    CV.github,
     `${CV.strings.availableLabel} ${CV.disponibilidade}`,
   ].forEach(txt => contact.appendChild(el("span", {}, txt)));
   body.appendChild(contact);
@@ -48,6 +49,19 @@ document.addEventListener("DOMContentLoaded", () => {
     exp.bullets.forEach(b => ulBullets.appendChild(li(b)));
     body.appendChild(ulBullets);
   });
+
+  // Projetos
+  if (CV.projetos || CV.projects) {
+    const projetosData = CV.projetos || CV.projects;
+    secao(CV.titulos.projects).forEach(n => body.appendChild(n));
+    projetosData.forEach(proj => {
+      const nome = proj.nome || proj.name;
+      body.appendChild(el("div", { class: "job-title" }, nome));
+      const ulBullets = el("ul");
+      proj.bullets.forEach(b => ulBullets.appendChild(li(b)));
+      body.appendChild(ulBullets);
+    });
+  }
 
   // Habilidades
   secao(CV.titulos.technicalSkills).forEach(n => body.appendChild(n));
