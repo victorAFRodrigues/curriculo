@@ -1,170 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Victor Augusto Ferreira Rodrigues</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: Arial, sans-serif;
-    font-size: 11pt;
-    line-height: 1.5;
-    color: #000;
-    background: #fff;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 40px 60px;
-  }
-
-  h1 {
-    font-size: 20pt;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    margin-bottom: 4px;
-  }
-  .subtitle {
-    font-size: 11pt;
-    color: #333;
-    margin-bottom: 6px;
-  }
-  .contact {
-    font-size: 10pt;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  .contact span { margin-right: 16px; }
-
-  hr {
-    border: none;
-    border-top: 1.5px solid #000;
-    margin: 0 0 8px 0;
-  }
-
-  h2 {
-    font-size: 11pt;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-    margin-top: 18px;
-  }
-
-  p { margin-bottom: 8px; font-size: 11pt; }
-
-  .job-title { font-weight: bold; font-size: 11pt; margin-top: 14px; margin-bottom: 1px; }
-  .job-meta { font-size: 10.5pt; color: #333; margin-bottom: 5px; }
-
-  ul { padding-left: 18px; margin-bottom: 4px; }
-  ul li { font-size: 11pt; margin-bottom: 3px; }
-
-  .skills-row { margin-bottom: 4px; font-size: 11pt; }
-  .skills-row strong { display: inline-block; min-width: 160px; }
-
-  @media print {
-    body { margin: 0; padding: 20px 40px 40px; }
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>Resume — Victor Augusto</title>
+  <link rel="stylesheet" href="/utils/styles/cv-styles.css">
 </head>
 <body>
+<script>
+  const CV = {
+    // ── Dados pessoais ────────────────────────────────────────
+    nome:     "Victor Augusto Ferreira Rodrigues",
+    titulo: ["Full Stack Developer", "Software Engineer", "Backend Developer"],
+    cidade: "São Paulo, Brazil",
+    telefone: "(11) 91917-8960",
+    email:    "victor_duu@hotmail.com",
+    linkedin: "linkedin.com/in/victorafrodrigues",
+    disponibilidade: "Remote, On-site or Hybrid",
 
-<h1>Victor Augusto Ferreira Rodrigues</h1>
-<div class="subtitle">Full Stack Developer | Mid-Level Systems Developer</div>
-<div class="contact">
-  <span>São Paulo, SP — Brazil</span>
-  <span>+55 (11) 91917-8960</span>
-  <span>victor_duu@hotmail.com</span>
-  <span>linkedin.com/in/victorafrodrigues</span>
-  <span>Available: remote, on-site, or hybrid</span>
+
+    // ── Anos de experiência total na área (usado no resumo) ───
+    anosDeExperiencia: (new Date(Date.now()).getFullYear() - 2020),
+
+    // ── Resumo ────────────────────────────────────────────────
+    resumo: "Full Stack Developer with over {anos} years of experience building enterprise applications, web systems, integrations, and e-commerce solutions. Specialized in back-end development using C#, ASP.NET Core, and Entity Framework Core, applying Clean Architecture, Domain-Driven Design (DDD), and CQRS principles, with strong adherence to SOLID practices and security standards such as OAuth2, JWT, and OWASP. Experienced in front-end development with Angular, TypeScript, and React. Skilled in infrastructure and DevOps using Docker, AWS, GCP, Azure, and CI/CD pipelines. Proven track record of delivering projects from architectural planning through production deployment, with a focus on scalability, security, and operational cost reduction.",
+
+    marcos: [
+    "Saved approximately BRL 40,000 in integration costs by developing ERP integrations (Protheus, Dealer.net, SolutionERP) with the GOEVO platform, eliminating dependency on a legacy system.",
+    "Led the complete software delivery lifecycle, including requirements gathering, architecture planning, development, testing, and production deployment.",
+    "Designed and implemented scalable architectures using Clean Architecture, DDD, CQRS, and SOLID principles, applying industry best practices for software development and security from project inception.",
+    "Automated business processes using Python, Go, and the OpenAI API, reducing manual operations and improving deployment and distribution workflows.",
+    "Developed customizations and integrations across five e-commerce platforms (VTEX, Tray, Nuvemshop, Shopify, and WordPress), delivering measurable improvements in Core Web Vitals and technical SEO.",
+    "Standardized development environments using Docker and CI/CD pipelines across the engineering team, reducing inconsistencies between local and production environments.",
+    "Promoted from Intern to Web Developer in less than three years based on technical growth and performance.",
+    "Designed and maintained a personal homelab environment using Proxmox, Linux servers, and networking technologies, expanding expertise beyond corporate infrastructure."
+  ],
+
+    // ── Experiências ──────────────────────────────────────────
+    // inicio/fim: "MM/YYYY" — use "Presente" no fim para emprego atual
+    // duracao: deixe null para calcular automaticamente, ou escreva manualmente ex: "1 ano e 6 meses"
+    // local: "Remoto" | "Presencial" | "Híbrido" | "" para omitir
+    experiencias: [
+      {
+        cargo: "Software Engineer",
+        empresa: "TPrime Tecnologia",
+        inicio: "08/2025",
+        fim: "06/2026",
+        duracao: null,
+        local: "On-site",
+        bullets: [
+          "Developed ERP-to-ERP integrations (Protheus, Dealer.net, SolutionERP, and GOEVO) using C# and ASP.NET Core, generating approximately BRL 40,000 in savings by replacing a legacy integration system.",
+          "Designed and implemented REST APIs using Clean Architecture, Repository Pattern, and Dependency Injection, with automated unit test coverage through xUnit.",
+          "Applied OAuth2, JWT, and OWASP security standards across exposed APIs, including rate limiting and layered validation.",
+          "Utilized Entity Framework Core, LINQ, and Dapper for data access and mapping with SQL Server and PostgreSQL.",
+          "Implemented architectural patterns including CQRS with MediatR, Factory, Strategy, and Observer within Domain-Driven Design (DDD) solutions.",
+          "Developed internal automation tools using Python and Go (Golang), including AI-powered workflows leveraging prompt engineering and OpenAI APIs.",
+          "Worked with Docker, GitHub Actions CI/CD pipelines, and Agile methodologies including Scrum and Kanban.",
+          "Developed front-end interfaces using HTML5, CSS3, and jQuery, while creating UI/UX prototypes in Figma."
+        ]
+      },
+      {
+        cargo: "Web Developer",
+        empresa: "Hungry Digital",
+        inicio: "11/2023",
+        fim: "04/2025",
+        duracao: null,
+        local: "Hybrid",
+        bullets: [
+          "Developed corporate websites, landing pages, and internal tools using Laravel, PHP, JavaScript, HTML5, and CSS3.",
+          "Implemented customizations and integrations for VTEX, Tray, Nuvemshop, WordPress, and Shopify, including checkout workflows and payment APIs.",
+          "Led performance optimization initiatives, technical SEO improvements, and Core Web Vitals enhancements that produced measurable gains in organic search rankings.",
+          "Standardized Docker-based development environments and managed deployment pipelines across the engineering team."
+        ]
+      },
+      {
+        cargo: "IT Support & Software Development Intern",
+        empresa: "Hungry Digital",
+        inicio: "04/2021",
+        fim: "11/2023",
+        duracao: null,
+        local: "Hybrid",
+        bullets: [
+          "Provided technical support, DNS troubleshooting, and network configuration.",
+          "Maintained web applications, fixed bugs, and implemented enhancements using HTML, CSS, and JavaScript.",
+          "Promoted to Web Developer based on technical growth and performance."
+        ]
+      }
+    ],
+
+    habilidades: [
+      { categoria: "Programming Languages", itens: ["C#", "Go (Golang)", "Python", "TypeScript", "JavaScript", "PHP", "Sass/SCSS", "HTML5", "CSS3"] },
+      { categoria: ".NET / Backend", itens: ["ASP.NET Core", "Entity Framework Core", "LINQ", "Dapper", "MediatR", "SignalR", "xUnit", "NUnit"] },
+      { categoria: "Architecture & Design Patterns", itens: ["Clean Architecture", "SOLID", "DDD", "CQRS", "Repository Pattern", "Unit of Work", "Factory", "Strategy", "Observer", "Dependency Injection"] },
+      { categoria: "Security", itens: ["OAuth2", "JWT", "OWASP", "HTTPS/TLS", "Rate Limiting", "API Gateway"] },
+      { categoria: "Frontend", itens: ["Angular", "React", "Astro", "jQuery", "Laravel"] },
+      { categoria: "Databases", itens: ["SQL Server", "MySQL", "PostgreSQL", "MongoDB", "Redis"] },
+      { categoria: "Cloud, Infrastructure & DevOps", itens: ["Docker", "AWS", "GCP", "Azure", "CI/CD", "GitHub Actions", "GitLab CI", "RabbitMQ", "Linux", "Proxmox", "Nginx", "Cloudflare"] },
+      { categoria: "Platforms & CMS", itens: ["VTEX", "Tray", "Nuvemshop", "WordPress", "Shopify"] },
+      { categoria: "Other Technologies", itens: ["Figma (UI/UX)", "Prompt Engineering", "OpenAI API", "Technical SEO", "Scrum", "Kanban"] }
+    ],
+
+    formacao: [
+      {
+        curso: "Associate Degree in Systems Analysis and Development",
+        instituicao: "UNICID - Universidade Cidade de São Paulo",
+        periodo: "January 2025 – December 2027",
+        status: "In Progress"
+      },
+      {
+        curso: "Bachelor's Degree in Information Systems",
+        instituicao: "UNINOVE – Nove de Julho University",
+        periodo: "January 2022 – 2024",
+        status: "Not Completed"
+      }
+    ],
+
+    certificacoes: [
+      "Complete Docker Course — Udemy",
+      "Angular + Java Bootcamp — Santander / DIO",
+      "HTML5, CSS3, JavaScript (I–IV), TypeScript, Git, React, Next.js, Node.js, SQL — OneBitCode",
+      "AI Agent Development with Node.js and OpenAI — OneBitCode",
+      "Google Gemini Developer Immersion — Alura (September 2024)"
+    ],
+
+    idiomas: [
+      { idioma: "Portuguese", nivel: "Native" },
+      { idioma: "English", nivel: "Upper-Intermediate / Advanced" }
+    ],
+
+    titulos: {
+      professionalSummary: "Professional Summary",
+      keyAchievements: "Key Achievements",
+      workExperience: "Work Experience",
+      technicalSkills: "Technical Skills",
+      education: "Education",
+      certifications: "Certifications",
+      languages: "Languages"
+    },
+
+    strings: {
+      availableLabel: "Available:",
+      present: "Present",
+      months: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+      year: "year", years: "years",
+      month: "month", monthsUnit: "months",
+      lessThanOneMonth: "less than 1 month",
+      and: " and ",
+      of: " ",
+      generatingDocx: "Generating DOCX\u2026",
+      downloadStarted: "Download started!",
+      docxError: "Error generating DOCX. See console."
+    },
+
+  };
+
+</script>
+
+<!-- ── Floating export button ── -->
+<button class="fab" onclick="document.querySelector('.popup-overlay').classList.add('open')" title="Export">
+  &#8681;
+</button>
+
+<!-- ── Export popup ── -->
+<div class="popup-overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="popup">
+    <button class="popup-close" onclick="this.closest('.popup-overlay').classList.remove('open')">&times;</button>
+    <h3>Export resume</h3>
+    <p>Choose an output format. The DOCX is generated directly in the browser — no external servers involved.</p>
+
+    <button class="popup-btn" onclick="exportDocx()">
+      <div class="btn-icon">&#128196;</div>
+      <div>
+        <div class="btn-label">Download DOCX</div>
+        <div class="btn-sub">Compatible with Word, Google Docs, and ATS systems</div>
+      </div>
+    </button>
+
+    <button class="popup-btn" onclick="window.print()">
+      <div class="btn-icon">&#128424;</div>
+      <div>
+        <div class="btn-label">Print / Save as PDF</div>
+        <div class="btn-sub">Use "Save as PDF" in the print dialog</div>
+      </div>
+    </button>
+
+    <div class="popup-status" id="popup-status"></div>
+  </div>
 </div>
 
-<h2>Professional Summary</h2>
-<hr>
-<p>
-  Full Stack Developer with 6+ years of experience building corporate applications, web systems, integrations, and e-commerce solutions. Back-end specialist in C#, ASP.NET Core, and Entity Framework Core, delivering architectures grounded in Clean Architecture, Domain-Driven Design (DDD), and CQRS, with consistent application of SOLID principles and security standards such as OAuth2, JWT, and OWASP. Front-end experience with Angular, TypeScript, and React. Infrastructure background spanning Docker, AWS, GCP, Azure, and CI/CD pipelines. Proven track record of owning projects end-to-end — from architectural planning to production — with a focus on scalability, security, and operational cost reduction.
-</p>
-
-<h2>Key Achievements</h2>
-<hr>
-<ul>
-  <li>Saved approximately R$ 40,000 in integration costs by developing ERP-to-ERP integrations (Protheus, Dealer.net, SolutionERP with GOEVO), fully eliminating legacy system dependency.</li>
-  <li>Owned the full project delivery lifecycle: requirements gathering, architectural planning, development, testing, and production deployment.</li>
-  <li>Designed and implemented scalable architectures using Clean Architecture, DDD, CQRS, and SOLID — applying industry best practices for both development quality and security from day one.</li>
-  <li>Automated corporate workflows using Python, Go, and the OpenAI API, significantly reducing manual operations and improving distribution and deployment pipelines.</li>
-  <li>Delivered customizations and integrations across 5 e-commerce platforms (VTEX, Tray, Nuvemshop, Shopify, and WordPress) with measurable improvements in Core Web Vitals and technical SEO.</li>
-  <li>Standardized development environments with Docker and CI/CD across the engineering team, eliminating inconsistencies between local and production environments.</li>
-  <li>Promoted from intern to Web Developer in under 3 years at the same company, based on demonstrated technical performance and growth.</li>
-  <li>Manages a personal homelab using Proxmox, Linux servers, and networking — demonstrating infrastructure depth beyond the corporate environment.</li>
-</ul>
-
-<h2>Work Experience</h2>
-<hr>
-
-<div class="job-title">Mid-Level Systems Developer</div>
-<div class="job-meta">TPrime Tecnologia &nbsp;|&nbsp; August 2025 – Present &nbsp;|&nbsp; Remote</div>
-<ul>
-  <li>Built ERP-to-ERP integrations (Protheus, Dealer.net, SolutionERP with GOEVO) in C# and ASP.NET Core, saving approximately R$ 40,000 in legacy system costs.</li>
-  <li>Architected and implemented REST APIs using Clean Architecture, Repository Pattern, and Dependency Injection, with unit test coverage via xUnit.</li>
-  <li>Enforced security standards including OAuth2, JWT, and OWASP across all exposed APIs, with rate limiting and layered input validation.</li>
-  <li>Used Entity Framework Core, LINQ, and Dapper for data access and ORM mapping against SQL Server and PostgreSQL.</li>
-  <li>Applied design patterns including CQRS with MediatR, Factory, Strategy, and Observer within Domain-Driven Design (DDD) solutions.</li>
-  <li>Built corporate automation tools in Python and Go (Golang), and implemented AI-powered automations using prompt engineering techniques applied to distribution and deployment workflows.</li>
-  <li>Worked with Docker, CI/CD pipelines via GitHub Actions, and agile methodologies (Scrum and Kanban).</li>
-  <li>Front-end work with HTML5, CSS3, and jQuery; UI/UX prototyping in Figma following design best practices.</li>
-</ul>
-
-<div class="job-title">Web Developer</div>
-<div class="job-meta">Hungry Digital &nbsp;|&nbsp; November 2023 – April 2025 (1 year 6 months)</div>
-<ul>
-  <li>Developed institutional websites, landing pages, and internal tools using Laravel, PHP, JavaScript, HTML5, and CSS3.</li>
-  <li>Implemented customizations and integrations across VTEX, Tray, Nuvemshop, WordPress, and Shopify, including checkout flows and payment APIs.</li>
-  <li>Led performance optimization, technical SEO, and Core Web Vitals improvements with measurable impact on clients' organic search rankings.</li>
-  <li>Standardized development environments with Docker and managed deployment pipelines for the entire engineering team.</li>
-</ul>
-
-<div class="job-title">Development and IT Support Intern</div>
-<div class="job-meta">Hungry Digital &nbsp;|&nbsp; April 2021 – October 2023 (2 years 7 months)</div>
-<ul>
-  <li>Provided technical support including DNS troubleshooting and network configuration.</li>
-  <li>Maintained applications, fixed bugs, and delivered improvements using HTML, CSS, and JavaScript.</li>
-  <li>Promoted to Web Developer based on demonstrated performance and technical growth.</li>
-</ul>
-
-<h2>Technical Skills</h2>
-<hr>
-<div class="skills-row"><strong>Languages:</strong> C#, Go (Golang), Python, TypeScript, JavaScript, PHP, Sass/SCSS, HTML5, CSS3</div>
-<div class="skills-row"><strong>.NET / Back-end:</strong> ASP.NET Core, Entity Framework Core, LINQ, Dapper, MediatR, SignalR, xUnit, NUnit</div>
-<div class="skills-row"><strong>Design Patterns:</strong> Clean Architecture, SOLID, DDD, CQRS, Repository Pattern, Unit of Work, Factory, Strategy, Observer, Dependency Injection</div>
-<div class="skills-row"><strong>Security:</strong> OAuth2, JWT, OWASP, HTTPS/TLS, Rate Limiting, API Gateway</div>
-<div class="skills-row"><strong>Front-end:</strong> Angular, React, Astro, jQuery, Laravel</div>
-<div class="skills-row"><strong>Databases:</strong> SQL Server, MySQL, PostgreSQL, MongoDB, Redis</div>
-<div class="skills-row"><strong>Infra / Cloud / DevOps:</strong> Docker, AWS, GCP, Azure, CI/CD, GitHub Actions, GitLab CI, RabbitMQ, Linux, Proxmox, Nginx, Cloudflare</div>
-<div class="skills-row"><strong>Platforms / CMS:</strong> VTEX, Tray, Nuvemshop, WordPress, Shopify</div>
-<div class="skills-row"><strong>Other:</strong> Figma (UI/UX), Prompt Engineering, OpenAI API, Technical SEO, Scrum, Kanban</div>
-
-<h2>Education</h2>
-<hr>
-<div class="job-title">Associate Degree in Systems Analysis and Development</div>
-<div class="job-meta">Universidade Cruzeiro do Sul &nbsp;|&nbsp; January 2025 – December 2028 (in progress)</div>
-
-<div class="job-title" style="margin-top:10px;">Bachelor's in Information Systems (incomplete)</div>
-<div class="job-meta">UNINOVE – Universidade Nove de Julho &nbsp;|&nbsp; January 2022 – 2024</div>
-
-<h2>Certifications</h2>
-<hr>
-<ul>
-  <li>Complete Docker — Udemy</li>
-  <li>Angular + Java Bootcamp — Santander / DIO (SPA with Angular, TypeScript, Web Components, Routing, Modules)</li>
-  <li>HTML5, CSS3, JavaScript (Levels I–IV), TypeScript, Git, React, Next.js, Node.js, SQL — OneBitCode</li>
-  <li>AI Agent with Node.js and OpenAI — OneBitCode</li>
-  <li>Dev Immersion with Google Gemini — Alura (September 2024)</li>
-</ul>
-
-<h2>Languages</h2>
-<hr>
-<ul>
-  <li>Portuguese — Native</li>
-  <li>English — Upper-Intermediate / Advanced</li>
-</ul>
-
+<!-- ── docx.js (geração DOCX no browser) ── -->
+<script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
+<script src="/utils/scripts/cv-utils.js"></script>
+<script src="/utils/scripts/cv-render.js"></script>
+<script src="/utils/scripts/cv-export.js"></script>
 </body>
 </html>

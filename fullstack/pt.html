@@ -1,361 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Currículo — Victor Augusto</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: Arial, sans-serif;
-    font-size: 11pt;
-    line-height: 1.5;
-    color: #000;
-    background: #fff;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 40px 60px;
-  }
-  h1 { font-size: 20pt; font-weight: bold; letter-spacing: 0.5px; margin-bottom: 4px; }
-  .subtitle { font-size: 11pt; color: #333; margin-bottom: 6px; }
-  .contact { font-size: 10pt; color: #333; margin-bottom: 20px; }
-  .contact span { margin-right: 16px; }
-  hr { border: none; border-top: 1.5px solid #000; margin: 0 0 8px 0; }
-  h2 { font-size: 11pt; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; margin-top: 18px; }
-  p { margin-bottom: 8px; font-size: 11pt; }
-  .job-title { font-weight: bold; font-size: 11pt; margin-top: 14px; margin-bottom: 1px; }
-  .job-meta { font-size: 10.5pt; color: #333; margin-bottom: 5px; }
-  ul { padding-left: 18px; margin-bottom: 4px; }
-  ul li { font-size: 11pt; margin-bottom: 3px; }
-  .skills-row { margin-bottom: 4px; font-size: 11pt; }
-  .skills-row strong { display: inline-block; min-width: 160px; }
-  @media print { body { margin: 0; padding: 20px 40px 40px; } .fab, .popup-overlay { display: none !important; } }
-
-  .fab {
-    position: fixed; bottom: 32px; right: 32px;
-    width: 52px; height: 52px; border-radius: 50%;
-    background: #1565C0; color: #fff; border: none; cursor: pointer;
-    box-shadow: 0 4px 16px rgba(21,101,192,.45);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px; transition: background .15s, transform .15s; z-index: 100;
-  }
-  .fab:hover { background: #0D47A1; transform: scale(1.08); }
-
-  .popup-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,.35); z-index: 200;
-    align-items: center; justify-content: center;
-  }
-  .popup-overlay.open { display: flex; }
-
-  .popup {
-    background: #fff; border-radius: 10px; padding: 32px 28px 24px;
-    width: 340px; box-shadow: 0 8px 40px rgba(0,0,0,.22);
-    position: relative; font-family: Arial, sans-serif;
-  }
-  .popup h3 { font-size: 15px; font-weight: bold; color: #0F1923; margin-bottom: 6px; }
-  .popup p  { font-size: 12px; color: #546E7A; margin-bottom: 22px; line-height: 1.5; }
-  .popup-close {
-    position: absolute; top: 12px; right: 16px;
-    background: none; border: none; font-size: 20px;
-    color: #90A4AE; cursor: pointer; line-height: 1;
-  }
-  .popup-close:hover { color: #0F1923; }
-
-  .popup-btn {
-    display: flex; align-items: center; gap: 12px;
-    width: 100%; padding: 13px 16px; border-radius: 7px;
-    border: 1.5px solid #E0E0E0; background: #fff;
-    cursor: pointer; margin-bottom: 10px; text-align: left;
-    transition: border-color .15s, background .15s;
-  }
-  .popup-btn:last-of-type { margin-bottom: 0; }
-  .popup-btn:hover { border-color: #1565C0; background: #E8F0FE; }
-  .popup-btn .btn-icon {
-    width: 36px; height: 36px; border-radius: 6px; background: #1565C0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px; flex-shrink: 0;
-  }
-  .popup-btn .btn-label { font-size: 13px; font-weight: bold; color: #0F1923; }
-  .popup-btn .btn-sub   { font-size: 11px; color: #78909C; margin-top: 1px; }
-
-  .popup-status {
-    margin-top: 14px; font-size: 12px; color: #1565C0;
-    text-align: center; min-height: 18px;
-  }
-  .popup-status.error { color: #C62828; }
-</style>
+  <meta charset="UTF-8">
+  <title>Currículo — Victor Augusto</title>
+  <link rel="stylesheet" href="/utils/styles/cv-styles.css">
 </head>
 <body>
-
 <script>
-// ============================================================
-//  EDITE APENAS ESTE OBJETO — o currículo se monta sozinho
-// ============================================================
-const CV = {
+  const CV = {
+    // ── Dados pessoais ────────────────────────────────────────
+    nome:     "Victor Augusto Ferreira Rodrigues",
+    titulo:   ["Desenvolvedor Full Stack", "Desenvolvedor de Sistemas Pleno", "Desenvolvedor de Software Pleno"],
+    cidade:   "São Paulo, SP",
+    telefone: "(11) 91917-8960",
+    email:    "victor_duu@hotmail.com",
+    linkedin: "linkedin.com/in/victorafrodrigues",
+    disponibilidade: "remoto, presencial ou híbrido",
 
-  // ── Dados pessoais ────────────────────────────────────────
-  nome:     "Victor Augusto Ferreira Rodrigues",
-  titulo:   ["Desenvolvedor Full Stack", "Desenvolvedor de Sistemas Pleno", "Desenvolvedor de Software Pleno"],
-  cidade:   "São Paulo, SP",
-  telefone: "(11) 91917-8960",
-  email:    "victor_duu@hotmail.com",
-  linkedin: "linkedin.com/in/victorafrodrigues",
-  disponibilidade: "remoto, presencial ou híbrido",
+    // ── Anos de experiência total na área (usado no resumo) ───
+    anosDeExperiencia: (new Date(Date.now()).getFullYear() - 2020),
 
-  // ── Anos de experiência total na área (usado no resumo) ───
-  anosDeExperiencia: 6,
+    // ── Resumo ────────────────────────────────────────────────
+    // Use {anos} como placeholder — será substituído automaticamente
+    resumo: `Desenvolvedor Full Stack com mais de {anos} anos de experiência em desenvolvimento de aplicações corporativas, sistemas web, integrações e e-commerce. Especialista em back-end com C#, ASP.NET Core e Entity Framework Core, aplicando arquiteturas baseadas em Clean Architecture, Domain-Driven Design (DDD) e CQRS, com uso consistente dos princípios SOLID e padrões de segurança como OAuth2, JWT e OWASP. Experiência em front-end com Angular, TypeScript e React. Infraestrutura com Docker, AWS, GCP, Azure e pipelines CI/CD. Histórico comprovado de entrega de projetos do planejamento arquitetural à produção, com foco em escalabilidade, segurança e redução de custos operacionais.`,
 
-  // ── Resumo ────────────────────────────────────────────────
-  // Use {anos} como placeholder — será substituído automaticamente
-  resumo: `Desenvolvedor Full Stack com mais de {anos} anos de experiência em desenvolvimento de aplicações corporativas, sistemas web, integrações e e-commerce. Especialista em back-end com C#, ASP.NET Core e Entity Framework Core, aplicando arquiteturas baseadas em Clean Architecture, Domain-Driven Design (DDD) e CQRS, com uso consistente dos princípios SOLID e padrões de segurança como OAuth2, JWT e OWASP. Experiência em front-end com Angular, TypeScript e React. Infraestrutura com Docker, AWS, GCP, Azure e pipelines CI/CD. Histórico comprovado de entrega de projetos do planejamento arquitetural à produção, com foco em escalabilidade, segurança e redução de custos operacionais.`,
+    // ── Marcos / Conquistas ───────────────────────────────────
+    marcos: [
+      "Economia de R$ 40.000 em custos de integração ao desenvolver integrações ERP (Protheus, Dealer.net, SolutionERP) com a plataforma GOEVO, eliminando dependência de sistema legado.",
+      "Responsável pelo ciclo completo de implementação de projetos: levantamento de requisitos, planejamento arquitetural, desenvolvimento, testes e deploy em produção.",
+      "Planejamento e implementação de arquiteturas escaláveis com Clean Architecture, DDD, CQRS e SOLID, aplicando os melhores padrões de mercado para desenvolvimento e segurança desde a concepção.",
+      "Automação de processos corporativos com Python, Go e OpenAI API, reduzindo operações manuais e melhorando fluxos de distribuição e deploy.",
+      "Customizações e integrações em 5 plataformas de e-commerce (VTEX, Tray, Nuvemshop, Shopify e WordPress) com melhorias mensuráveis em Core Web Vitals e SEO técnico.",
+      "Padronização de ambientes de desenvolvimento com Docker e CI/CD para toda a equipe, reduzindo inconsistências entre ambiente local e produção.",
+      "Promovido de estagiário a Desenvolvedor Web em menos de 3 anos na mesma empresa, por desempenho e evolução técnica comprovados.",
+      "Administração de homelab próprio com Proxmox, servidores Linux e redes — aprofundamento técnico em infraestrutura além do ambiente corporativo.",
+    ],
 
-  // ── Marcos / Conquistas ───────────────────────────────────
-  marcos: [
-    "Economia de R$ 40.000 em custos de integração ao desenvolver integrações ERP (Protheus, Dealer.net, SolutionERP) com a plataforma GOEVO, eliminando dependência de sistema legado.",
-    "Responsável pelo ciclo completo de implementação de projetos: levantamento de requisitos, planejamento arquitetural, desenvolvimento, testes e deploy em produção.",
-    "Planejamento e implementação de arquiteturas escaláveis com Clean Architecture, DDD, CQRS e SOLID, aplicando os melhores padrões de mercado para desenvolvimento e segurança desde a concepção.",
-    "Automação de processos corporativos com Python, Go e OpenAI API, reduzindo operações manuais e melhorando fluxos de distribuição e deploy.",
-    "Customizações e integrações em 5 plataformas de e-commerce (VTEX, Tray, Nuvemshop, Shopify e WordPress) com melhorias mensuráveis em Core Web Vitals e SEO técnico.",
-    "Padronização de ambientes de desenvolvimento com Docker e CI/CD para toda a equipe, reduzindo inconsistências entre ambiente local e produção.",
-    "Promovido de estagiário a Desenvolvedor Web em menos de 3 anos na mesma empresa, por desempenho e evolução técnica comprovados.",
-    "Administração de homelab próprio com Proxmox, servidores Linux e redes — aprofundamento técnico em infraestrutura além do ambiente corporativo.",
-  ],
+    // ── Experiências ──────────────────────────────────────────
+    // inicio/fim: "MM/YYYY" — use "Presente" no fim para emprego atual
+    // duracao: deixe null para calcular automaticamente, ou escreva manualmente ex: "1 ano e 6 meses"
+    // local: "Remoto" | "Presencial" | "Híbrido" | "" para omitir
+    experiencias: [
+      {
+        cargo:   "Desenvolvedor de Sistemas Pleno",
+        empresa: "TPrime Tecnologia",
+        inicio:  "08/2025",
+        fim:     "06/2026",
+        duracao: null,
+        local:   "Presencial",
+        bullets: [
+          "Desenvolveu integrações ERP-to-ERP (Protheus, Dealer.net, SolutionERP com GOEVO) em C# e ASP.NET Core, gerando economia de aproximadamente R$ 40.000 em custos com sistema legado.",
+          "Arquitetou e implementou APIs REST com Clean Architecture, Repository Pattern e Dependency Injection, com cobertura de testes unitários via xUnit.",
+          "Aplicou padrões de segurança OAuth2, JWT e OWASP nas APIs expostas, com rate limiting e validação em camadas.",
+          "Utilizou Entity Framework Core, LINQ e Dapper para acesso e mapeamento de dados em SQL Server e PostgreSQL.",
+          "Implementou padrões de projeto como CQRS com MediatR, Factory, Strategy e Observer em soluções baseadas em Domain-Driven Design (DDD).",
+          "Criou ferramentas de automação corporativa com Python e Go (Golang) e automações com IA e engenharia de prompt aplicadas a fluxos de distribuição e deploy.",
+          "Trabalhou com Docker, pipelines CI/CD via GitHub Actions e metodologias ágeis Scrum e Kanban.",
+          "Front-end com HTML5, CSS3, jQuery; prototipação de interfaces no Figma com boas práticas de UI/UX.",
+        ]
+      },
+      {
+        cargo:   "Desenvolvedor Web",
+        empresa: "Hungry Digital",
+        inicio:  "11/2023",
+        fim:     "04/2025",
+        duracao: null,
+        local:   "Híbrido",
+        bullets: [
+          "Desenvolveu sites institucionais, landing pages e ferramentas internas com Laravel, PHP, JavaScript, HTML5 e CSS3.",
+          "Implementou customizações e integrações em VTEX, Tray, Nuvemshop, WordPress e Shopify, incluindo fluxos de checkout e APIs de pagamento.",
+          "Conduziu otimizações de performance, SEO técnico e melhorias de Core Web Vitals com impacto mensurável no ranking orgânico dos clientes.",
+          "Padronizou ambientes de desenvolvimento com Docker e gerenciou pipelines de deploy para toda a equipe.",
+        ]
+      },
+      {
+        cargo:   "Estagiário — Desenvolvimento e Suporte em TI",
+        empresa: "Hungry Digital",
+        inicio:  "04/2021",
+        fim:     "11/2023",
+        duracao: null,
+        local:   "Híbrido",
+        bullets: [
+          "Suporte técnico, resolução de problemas de DNS e configuração de redes.",
+          "Manutenção de aplicações, correção de bugs e melhorias com HTML, CSS e JavaScript.",
+          "Promovido a Desenvolvedor Web pelo desempenho e evolução técnica comprovados.",
+        ]
+      },
+    ],
 
-  // ── Experiências ──────────────────────────────────────────
-  // inicio/fim: "MM/YYYY" — use "Presente" no fim para emprego atual
-  // duracao: deixe null para calcular automaticamente, ou escreva manualmente ex: "1 ano e 6 meses"
-  // local: "Remoto" | "Presencial" | "Híbrido" | "" para omitir
-  experiencias: [
-    {
-      cargo:   "Desenvolvedor de Sistemas Pleno",
-      empresa: "TPrime Tecnologia",
-      inicio:  "08/2025",
-      fim:     "Presente",
-      duracao: null,
-      local:   "Remoto",
-      bullets: [
-        "Desenvolveu integrações ERP-to-ERP (Protheus, Dealer.net, SolutionERP com GOEVO) em C# e ASP.NET Core, gerando economia de aproximadamente R$ 40.000 em custos com sistema legado.",
-        "Arquitetou e implementou APIs REST com Clean Architecture, Repository Pattern e Dependency Injection, com cobertura de testes unitários via xUnit.",
-        "Aplicou padrões de segurança OAuth2, JWT e OWASP nas APIs expostas, com rate limiting e validação em camadas.",
-        "Utilizou Entity Framework Core, LINQ e Dapper para acesso e mapeamento de dados em SQL Server e PostgreSQL.",
-        "Implementou padrões de projeto como CQRS com MediatR, Factory, Strategy e Observer em soluções baseadas em Domain-Driven Design (DDD).",
-        "Criou ferramentas de automação corporativa com Python e Go (Golang) e automações com IA e engenharia de prompt aplicadas a fluxos de distribuição e deploy.",
-        "Trabalhou com Docker, pipelines CI/CD via GitHub Actions e metodologias ágeis Scrum e Kanban.",
-        "Front-end com HTML5, CSS3, jQuery; prototipação de interfaces no Figma com boas práticas de UI/UX.",
-      ]
+    // ── Habilidades ───────────────────────────────────────────
+    habilidades: [
+      { categoria: "Linguagens",          itens: ["C#", "Go (Golang)", "Python", "TypeScript", "JavaScript", "PHP", "Sass/SCSS", "HTML5", "CSS3"] },
+      { categoria: ".NET / Back-end",     itens: ["ASP.NET Core", "Entity Framework Core", "LINQ", "Dapper", "MediatR", "SignalR", "xUnit", "NUnit"] },
+      { categoria: "Padrões de Projeto",  itens: ["Clean Architecture", "SOLID", "DDD", "CQRS", "Repository Pattern", "Unit of Work", "Factory", "Strategy", "Observer", "Dependency Injection"] },
+      { categoria: "Segurança",           itens: ["OAuth2", "JWT", "OWASP", "HTTPS/TLS", "Rate Limiting", "API Gateway"] },
+      { categoria: "Front-end",           itens: ["Angular", "React", "Astro", "jQuery", "Laravel"] },
+      { categoria: "Bancos de Dados",     itens: ["SQL Server", "MySQL", "PostgreSQL", "MongoDB", "Redis"] },
+      { categoria: "Infra / Cloud / DevOps", itens: ["Docker", "AWS", "GCP", "Azure", "CI/CD", "GitHub Actions", "GitLab CI", "RabbitMQ", "Linux", "Proxmox", "Nginx", "Cloudflare"] },
+      { categoria: "Plataformas / CMS",   itens: ["VTEX", "Tray", "Nuvemshop", "WordPress", "Shopify"] },
+      { categoria: "Outros",              itens: ["Figma (UI/UX)", "Engenharia de Prompt", "OpenAI API", "SEO Técnico", "Scrum", "Kanban"] },
+    ],
+
+    // ── Formação ──────────────────────────────────────────────
+    formacao: [
+      {
+        curso:      "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+        instituicao:"Universidade Cruzeiro do Sul",
+        periodo:    "Janeiro de 2025 – Dezembro de 2027",
+        status:     "em curso",
+      },
+      {
+        curso:      "Bacharelado em Sistemas da Informação",
+        instituicao:"UNINOVE – Universidade Nove de Julho",
+        periodo:    "Janeiro de 2022 – 2024",
+        status:     "incompleto",
+      },
+    ],
+
+    // ── Certificações ─────────────────────────────────────────
+    certificacoes: [
+      "Docker Completo — Udemy",
+      "Angular + Java Bootcamp — Santander / DIO (SPA com Angular, TypeScript, Web Components, Rotas, Módulos)",
+      "HTML5, CSS3, JavaScript (I–IV), TypeScript, Git, React, Next.js, Node.js, SQL — OneBitCode",
+      "Agente de IA com Node.js e OpenAI — OneBitCode",
+      "Imersão Dev com Google Gemini — Alura (setembro de 2024)",
+    ],
+
+    // ── Idiomas ───────────────────────────────────────────────
+    idiomas: [
+      { idioma: "Português", nivel: "Nativo" },
+      { idioma: "Inglês",    nivel: "Intermediário / Avançado" },
+    ],
+    
+    titulos: {
+      professionalSummary: "Resumo Profissional",
+      keyAchievements: "Principais Marcos",
+      workExperience: "Experiência Profissional",
+      technicalSkills: "Habilidades Técnicas",
+      education: "Formação Acadêmica",
+      certifications: "Certificações",
+      languages: "Idiomas"
     },
-    {
-      cargo:   "Desenvolvedor Web",
-      empresa: "Hungry Digital",
-      inicio:  "11/2023",
-      fim:     "04/2025",
-      duracao: null,
-      local:   "",
-      bullets: [
-        "Desenvolveu sites institucionais, landing pages e ferramentas internas com Laravel, PHP, JavaScript, HTML5 e CSS3.",
-        "Implementou customizações e integrações em VTEX, Tray, Nuvemshop, WordPress e Shopify, incluindo fluxos de checkout e APIs de pagamento.",
-        "Conduziu otimizações de performance, SEO técnico e melhorias de Core Web Vitals com impacto mensurável no ranking orgânico dos clientes.",
-        "Padronizou ambientes de desenvolvimento com Docker e gerenciou pipelines de deploy para toda a equipe.",
-      ]
+
+    strings: {
+      availableLabel: "Disponível:",
+      present: "Presente",
+      months: ["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"],
+      year: "ano", years: "anos",
+      month: "mês", monthsUnit: "meses",
+      lessThanOneMonth: "menos de 1 mês",
+      and: " e ",
+      of: " de ",
+      generatingDocx: "Gerando DOCX…",
+      downloadStarted: "Download iniciado!",
+      docxError: "Erro ao gerar DOCX. Veja o console."
     },
-    {
-      cargo:   "Estagiário — Desenvolvimento e Suporte em TI",
-      empresa: "Hungry Digital",
-      inicio:  "04/2021",
-      fim:     "11/2023",
-      duracao: null,
-      local:   "",
-      bullets: [
-        "Suporte técnico, resolução de problemas de DNS e configuração de redes.",
-        "Manutenção de aplicações, correção de bugs e melhorias com HTML, CSS e JavaScript.",
-        "Promovido a Desenvolvedor Web pelo desempenho e evolução técnica comprovados.",
-      ]
-    },
-  ],
 
-  // ── Habilidades ───────────────────────────────────────────
-  habilidades: [
-    { categoria: "Linguagens",          itens: ["C#", "Go (Golang)", "Python", "TypeScript", "JavaScript", "PHP", "Sass/SCSS", "HTML5", "CSS3"] },
-    { categoria: ".NET / Back-end",     itens: ["ASP.NET Core", "Entity Framework Core", "LINQ", "Dapper", "MediatR", "SignalR", "xUnit", "NUnit"] },
-    { categoria: "Padrões de Projeto",  itens: ["Clean Architecture", "SOLID", "DDD", "CQRS", "Repository Pattern", "Unit of Work", "Factory", "Strategy", "Observer", "Dependency Injection"] },
-    { categoria: "Segurança",           itens: ["OAuth2", "JWT", "OWASP", "HTTPS/TLS", "Rate Limiting", "API Gateway"] },
-    { categoria: "Front-end",           itens: ["Angular", "React", "Astro", "jQuery", "Laravel"] },
-    { categoria: "Bancos de Dados",     itens: ["SQL Server", "MySQL", "PostgreSQL", "MongoDB", "Redis"] },
-    { categoria: "Infra / Cloud / DevOps", itens: ["Docker", "AWS", "GCP", "Azure", "CI/CD", "GitHub Actions", "GitLab CI", "RabbitMQ", "Linux", "Proxmox", "Nginx", "Cloudflare"] },
-    { categoria: "Plataformas / CMS",   itens: ["VTEX", "Tray", "Nuvemshop", "WordPress", "Shopify"] },
-    { categoria: "Outros",              itens: ["Figma (UI/UX)", "Engenharia de Prompt", "OpenAI API", "SEO Técnico", "Scrum", "Kanban"] },
-  ],
+  };
 
-  // ── Formação ──────────────────────────────────────────────
-  formacao: [
-    {
-      curso:      "Tecnólogo em Análise e Desenvolvimento de Sistemas",
-      instituicao:"Universidade Cruzeiro do Sul",
-      periodo:    "Janeiro de 2025 – Dezembro de 2027",
-      status:     "em curso",
-    },
-    {
-      curso:      "Bacharelado em Sistemas da Informação",
-      instituicao:"UNINOVE – Universidade Nove de Julho",
-      periodo:    "Janeiro de 2022 – 2024",
-      status:     "incompleto",
-    },
-  ],
-
-  // ── Certificações ─────────────────────────────────────────
-  certificacoes: [
-    "Docker Completo — Udemy",
-    "Angular + Java Bootcamp — Santander / DIO (SPA com Angular, TypeScript, Web Components, Rotas, Módulos)",
-    "HTML5, CSS3, JavaScript (I–IV), TypeScript, Git, React, Next.js, Node.js, SQL — OneBitCode",
-    "Agente de IA com Node.js e OpenAI — OneBitCode",
-    "Imersão Dev com Google Gemini — Alura (setembro de 2024)",
-  ],
-
-  // ── Idiomas ───────────────────────────────────────────────
-  idiomas: [
-    { idioma: "Português", nivel: "Nativo" },
-    { idioma: "Inglês",    nivel: "Intermediário / Avançado" },
-  ],
-};
-
-// ============================================================
-//  FUNÇÕES UTILITÁRIAS — não precisa editar daqui pra baixo
-// ============================================================
-
-function calcularDuracao(inicio, fim) {
-  const [mi, ai] = inicio.split("/").map(Number);
-  let meses;
-  if (fim === "Presente") {
-    const hoje = new Date();
-    meses = (hoje.getFullYear() - ai) * 12 + (hoje.getMonth() + 1 - mi);
-  } else {
-    const [mf, af] = fim.split("/").map(Number);
-    meses = (af - ai) * 12 + (mf - mi);
-  }
-  const anos  = Math.floor(meses / 12);
-  const resto = meses % 12;
-  const partes = [];
-  if (anos  > 0) partes.push(`${anos} ${anos  === 1 ? "ano"  : "anos"}`);
-  if (resto > 0) partes.push(`${resto} ${resto === 1 ? "mês" : "meses"}`);
-  return partes.join(" e ") || "menos de 1 mês";
-}
-
-function formatarPeriodo(inicio, fim) {
-  const meses = ["janeiro","fevereiro","março","abril","maio","junho",
-                 "julho","agosto","setembro","outubro","novembro","dezembro"];
-  function fmt(str) {
-    if (str === "Presente") return "Presente";
-    const [m, a] = str.split("/");
-    return `${meses[parseInt(m) - 1].charAt(0).toUpperCase() + meses[parseInt(m) - 1].slice(1)} de ${a}`;
-  }
-  return `${fmt(inicio)} – ${fmt(fim)}`;
-}
-
-function el(tag, attrs = {}, ...children) {
-  const e = document.createElement(tag);
-  for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v);
-  for (const c of children) {
-    if (typeof c === "string") e.appendChild(document.createTextNode(c));
-    else if (c) e.appendChild(c);
-  }
-  return e;
-}
-
-function hr() { return document.createElement("hr"); }
-
-function secao(titulo) {
-  return [el("h2", {}, titulo), hr()];
-}
-
-function li(texto) {
-  const item = document.createElement("li");
-  item.textContent = texto;
-  return item;
-}
-
-// ============================================================
-//  RENDERIZAÇÃO
-// ============================================================
-document.addEventListener("DOMContentLoaded", () => {
-  const body = document.body;
-
-  // Nome
-  body.appendChild(el("h1", {}, CV.nome));
-
-  // Subtítulo
-  body.appendChild(el("div", { class: "subtitle" }, CV.titulo.join(" | ")));
-
-  // Contato
-  const contact = el("div", { class: "contact" });
-  [
-    CV.cidade,
-    CV.telefone,
-    CV.email,
-    CV.linkedin,
-    `Disponível: ${CV.disponibilidade}`,
-  ].forEach(txt => contact.appendChild(el("span", {}, txt)));
-  body.appendChild(contact);
-
-  // Resumo
-  secao("Resumo Profissional").forEach(n => body.appendChild(n));
-  const resumoTexto = CV.resumo.replace("{anos}", CV.anosDeExperiencia);
-  body.appendChild(el("p", {}, resumoTexto));
-
-  // Marcos
-  secao("Principais Marcos").forEach(n => body.appendChild(n));
-  const ulMarcos = el("ul");
-  CV.marcos.forEach(m => ulMarcos.appendChild(li(m)));
-  body.appendChild(ulMarcos);
-
-  // Experiências
-  secao("Experiência Profissional").forEach(n => body.appendChild(n));
-  CV.experiencias.forEach(exp => {
-    const duracao = exp.duracao ?? calcularDuracao(exp.inicio, exp.fim);
-    const periodo = formatarPeriodo(exp.inicio, exp.fim);
-    const metaParts = [exp.empresa, periodo];
-    if (exp.fim !== "Presente") metaParts.push(duracao);
-    if (exp.local) metaParts.push(exp.local);
-
-    body.appendChild(el("div", { class: "job-title" }, exp.cargo));
-    body.appendChild(el("div", { class: "job-meta" }, metaParts.join(" \u00a0|\u00a0 ")));
-
-    const ulBullets = el("ul");
-    exp.bullets.forEach(b => ulBullets.appendChild(li(b)));
-    body.appendChild(ulBullets);
-  });
-
-  // Habilidades
-  secao("Habilidades Técnicas").forEach(n => body.appendChild(n));
-  CV.habilidades.forEach(({ categoria, itens }) => {
-    const row = el("div", { class: "skills-row" });
-    row.appendChild(el("strong", {}, `${categoria}:`));
-    row.appendChild(document.createTextNode(" " + itens.join(", ")));
-    body.appendChild(row);
-  });
-
-  // Formação
-  secao("Formação Acadêmica").forEach(n => body.appendChild(n));
-  CV.formacao.forEach((f, i) => {
-    const d = el("div", { class: "job-title" });
-    if (i > 0) d.style.marginTop = "10px";
-    const statusLabel = f.status ? ` (${f.status})` : "";
-    d.textContent = f.curso + statusLabel;
-    body.appendChild(d);
-    body.appendChild(el("div", { class: "job-meta" }, `${f.instituicao} \u00a0|\u00a0 ${f.periodo}`));
-  });
-
-  // Certificações
-  secao("Certificações").forEach(n => body.appendChild(n));
-  const ulCerts = el("ul");
-  CV.certificacoes.forEach(c => ulCerts.appendChild(li(c)));
-  body.appendChild(ulCerts);
-
-  // Idiomas
-  secao("Idiomas").forEach(n => body.appendChild(n));
-  const ulIdiomas = el("ul");
-  CV.idiomas.forEach(({ idioma, nivel }) => ulIdiomas.appendChild(li(`${idioma} — ${nivel}`)));
-  body.appendChild(ulIdiomas);
-});
 </script>
 
 <!-- ── Botão flutuante ── -->
@@ -391,152 +193,9 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 
 <!-- ── docx.js (geração DOCX no browser) ── -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.umd.min.js"></script>
-<script>
-async function exportDocx() {
-  const status = document.getElementById('popup-status');
-  status.className = 'popup-status';
-  status.textContent = 'Gerando DOCX…';
-
-  try {
-    const {
-      Document, Packer, Paragraph, TextRun, AlignmentType,
-      BorderStyle, LevelFormat, HeadingLevel
-    } = docx;
-
-    // helpers
-    const BLUE = "1565C0", DARK = "0F1923", GRAY = "546E7A";
-    const font = "Arial";
-
-    const t  = (text, opts = {}) => new TextRun({ text, font, size: 22, color: DARK, ...opts });
-    const tb = (text, opts = {}) => t(text, { bold: true, ...opts });
-
-    const p  = (...runs) => new Paragraph({ children: runs, spacing: { after: 60 } });
-    const ph1 = (text)   => new Paragraph({
-      heading: HeadingLevel.HEADING_1,
-      spacing: { after: 40 },
-      children: [new TextRun({ text, font, size: 40, bold: true, color: DARK })]
-    });
-    const pSub = (text) => new Paragraph({
-      spacing: { after: 40 },
-      children: [new TextRun({ text, font, size: 22, color: GRAY })]
-    });
-    const pContact = (text) => new Paragraph({
-      spacing: { after: 120 },
-      children: [new TextRun({ text, font, size: 20, color: GRAY })]
-    });
-    const pSection = (text) => new Paragraph({
-      spacing: { before: 280, after: 80 },
-      border: { bottom: { style: BorderStyle.SINGLE, size: 8, color: BLUE, space: 4 } },
-      children: [new TextRun({ text: text.toUpperCase(), font, size: 20, bold: true, color: BLUE })]
-    });
-    const pJobTitle = (text) => new Paragraph({
-      spacing: { before: 180, after: 20 },
-      children: [new TextRun({ text, font, size: 22, bold: true, color: DARK })]
-    });
-    const pJobMeta = (text) => new Paragraph({
-      spacing: { after: 60 },
-      children: [new TextRun({ text, font, size: 20, color: GRAY })]
-    });
-    const pBullet = (text) => new Paragraph({
-      numbering: { reference: "bullets", level: 0 },
-      spacing: { before: 40, after: 40 },
-      children: [new TextRun({ text, font, size: 20, color: DARK })]
-    });
-    const pSkill = (cat, itens) => new Paragraph({
-      spacing: { after: 60 },
-      children: [
-        new TextRun({ text: cat + ": ", font, size: 20, bold: true, color: DARK }),
-        new TextRun({ text: itens.join(", "), font, size: 20, color: DARK }),
-      ]
-    });
-
-    // Build content
-    const children = [];
-
-    // Header
-    children.push(ph1(CV.nome));
-    children.push(pSub(CV.titulo.join(" | ")));
-    children.push(pContact([CV.cidade, CV.telefone, CV.email, CV.linkedin, `Disponível: ${CV.disponibilidade}`].join("   |   ")));
-
-    // Resumo
-    children.push(pSection("Resumo Profissional"));
-    children.push(p(t(CV.resumo.replace("{anos}", CV.anosDeExperiencia))));
-
-    // Marcos
-    children.push(pSection("Principais Marcos"));
-    CV.marcos.forEach(m => children.push(pBullet(m)));
-
-    // Experiência
-    children.push(pSection("Experiência Profissional"));
-    CV.experiencias.forEach(exp => {
-      const duracao = exp.duracao ?? calcularDuracao(exp.inicio, exp.fim);
-      const periodo = formatarPeriodo(exp.inicio, exp.fim);
-      const metaParts = [exp.empresa, periodo];
-      if (exp.fim !== "Presente") metaParts.push(duracao);
-      if (exp.local) metaParts.push(exp.local);
-
-      children.push(pJobTitle(exp.cargo));
-      children.push(pJobMeta(metaParts.join("   |   ")));
-      exp.bullets.forEach(b => children.push(pBullet(b)));
-    });
-
-    // Habilidades
-    children.push(pSection("Habilidades Técnicas"));
-    CV.habilidades.forEach(({ categoria, itens }) => children.push(pSkill(categoria, itens)));
-
-    // Formação
-    children.push(pSection("Formação Acadêmica"));
-    CV.formacao.forEach(f => {
-      const statusLabel = f.status ? ` (${f.status})` : "";
-      children.push(pJobTitle(f.curso + statusLabel));
-      children.push(pJobMeta(`${f.instituicao}   |   ${f.periodo}`));
-    });
-
-    // Certificações
-    children.push(pSection("Certificações"));
-    CV.certificacoes.forEach(c => children.push(pBullet(c)));
-
-    // Idiomas
-    children.push(pSection("Idiomas"));
-    CV.idiomas.forEach(({ idioma, nivel }) => children.push(pBullet(`${idioma} — ${nivel}`)));
-
-    const doc = new Document({
-      numbering: {
-        config: [{
-          reference: "bullets",
-          levels: [{
-            level: 0, format: LevelFormat.BULLET, text: "-",
-            alignment: AlignmentType.LEFT,
-            style: { paragraph: { indent: { left: 400, hanging: 200 } } }
-          }]
-        }]
-      },
-      sections: [{
-        properties: {
-          page: { margin: { top: 900, right: 1080, bottom: 900, left: 1080 } }
-        },
-        children
-      }]
-    });
-
-    const blob = await Packer.toBlob(doc);
-    const url  = URL.createObjectURL(blob);
-    const a    = document.createElement("a");
-    const nome = CV.nome.toLowerCase().replace(/\s+/g, "_");
-    a.href = url; a.download = `curriculo_${nome}.docx`;
-    a.click();
-    URL.revokeObjectURL(url);
-
-    status.textContent = "Download iniciado!";
-    setTimeout(() => { status.textContent = ""; }, 3000);
-
-  } catch (err) {
-    console.error(err);
-    status.className = "popup-status error";
-    status.textContent = "Erro ao gerar DOCX. Veja o console.";
-  }
-}
-</script>
+<script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
+<script src="/utils/scripts/cv-utils.js"></script>
+<script src="/utils/scripts/cv-render.js"></script>
+<script src="/utils/scripts/cv-export.js"></script>
 </body>
 </html>
